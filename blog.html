@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Journal | Vasif</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0f172a;color:white;}
+.container{width:90%;max-width:1000px;margin:auto;}
+
+nav{
+padding:25px 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+opacity:0.8;
+}
+
+nav a:hover{opacity:1;}
+
+header{
+padding:70px 0 40px 0;
+text-align:center;
+}
+
+header h1{
+font-size:38px;
+font-weight:800;
+}
+
+.search-box{
+text-align:center;
+margin-bottom:30px;
+}
+
+.search-box input{
+width:60%;
+max-width:400px;
+padding:12px 20px;
+border-radius:30px;
+border:none;
+outline:none;
+font-size:14px;
+}
+
+.tags{
+text-align:center;
+margin-bottom:40px;
+}
+
+.tag-btn{
+padding:8px 16px;
+margin:5px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+background:#1e293b;
+color:white;
+}
+
+.tag-btn.active{
+background:#38bdf8;
+color:black;
+}
+
+.post{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+margin-bottom:40px;
+border:1px solid #334155;
+}
+
+.post h2{
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+.post p{
+opacity:0.85;
+margin-bottom:15px;
+}
+
+pre{
+background:#000;
+color:#00ff88;
+padding:20px;
+border-radius:10px;
+overflow-x:auto;
+}
+
+footer{
+text-align:center;
+padding:40px 0;
+border-top:1px solid #334155;
+margin-top:60px;
+opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+<h2>Vasif</h2>
+<div>
+<a href="index.html">Home</a>
+<a href="blog.html">Blog</a>
+</div>
+</nav>
+
+<header>
+<h1>DevOps Journal</h1>
+<p style="margin-top:15px;opacity:0.7;">
+Search my real-world cloud implementations, commands & deployment steps.
+</p>
+</header>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search commands, tools, topics...">
+</div>
+
+<div class="tags">
+<button class="tag-btn active" data-tag="all">All</button>
+<button class="tag-btn" data-tag="aws">AWS</button>
+<button class="tag-btn" data-tag="terraform">Terraform</button>
+<button class="tag-btn" data-tag="kubernetes">Kubernetes</button>
+<button class="tag-btn" data-tag="cicd">CI/CD</button>
+<button class="tag-btn" data-tag="azure">Azure</button>
+</div>
+
+<!-- POSTS -->
+
+<div class="post" data-tags="aws terraform kubernetes">
+<h2>EKS Deployment using Terraform</h2>
+
+<p><strong>Objective:</strong> Deploy production-ready EKS cluster.</p>
+
+<pre>
+terraform init
+terraform apply
+aws eks update-kubeconfig --region ap-south-1 --name my-eks
+kubectl get nodes
+</pre>
+
+<p><strong>Outcome:</strong> Successfully deployed scalable Kubernetes cluster.</p>
+</div>
+
+<div class="post" data-tags="terraform aws">
+<h2>Terraform Remote Backend Setup</h2>
+
+<pre>
+terraform {
+  backend "s3" {
+    bucket         = "tf-state"
+    key            = "eks/terraform.tfstate"
+    region         = "ap-south-1"
+    dynamodb_table = "tf-lock"
+  }
+}
+</pre>
+
+<p><strong>Outcome:</strong> Enabled remote state locking for safe collaboration.</p>
+</div>
+
+<div class="post" data-tags="cicd kubernetes aws">
+<h2>CI/CD with GitHub Actions to EKS</h2>
+
+<pre>
+docker build -t app .
+docker push my-ecr-repo
+kubectl apply -f deployment.yaml
+</pre>
+
+<p><strong>Outcome:</strong> Automated deployment pipeline.</p>
+</div>
+
+<div class="post" data-tags="azure monitoring">
+<h2>Azure Monitoring with Grafana & Loki</h2>
+
+<pre>
+sudo systemctl start grafana-server
+docker run -d grafana/loki
+</pre>
+
+<p><strong>Outcome:</strong> Centralized monitoring dashboard.</p>
+</div>
+
+  <div class="post">
+<h2>Title of Task</h2>
+
+<p><strong>Objective:</strong> What you wanted to achieve.</p>
+
+<pre>
+# Your commands here
+kubectl get pods
+terraform apply
+</pre>
+
+<p><strong>Outcome:</strong> Result of implementation.</p>
+</div>
+
+  
+<footer>
+© 2026 Vasif | DevOps Journal
+</footer>
+
+</div>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const posts = document.querySelectorAll(".post");
+const tagButtons = document.querySelectorAll(".tag-btn");
+
+let selectedTag = "all";
+
+function filterPosts() {
+    const searchText = searchInput.value.toLowerCase();
+
+    posts.forEach(post => {
+        const text = post.innerText.toLowerCase();
+        const tags = post.dataset.tags;
+
+        const matchesSearch = text.includes(searchText);
+        const matchesTag = selectedTag === "all" || tags.includes(selectedTag);
+
+        post.style.display = (matchesSearch && matchesTag) ? "block" : "none";
+    });
+}
+
+searchInput.addEventListener("keyup", filterPosts);
+
+tagButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        tagButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        selectedTag = button.dataset.tag;
+        filterPosts();
+    });
+});
+</script>
+
+</body>
+</html>
