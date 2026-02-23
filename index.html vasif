@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasif | Cloud & DevOps Consultant</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7fb;
+        color: #333;
+        transition: 0.3s ease;
+    }
+
+    /* Dark Toggle Button */
+    .dark-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        background-color: #111;
+        color: white;
+        z-index: 1000;
+        transition: 0.3s ease;
+    }
+
+    .dark-toggle:hover { transform: scale(1.1); }
+
+    header {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    header h1 { margin: 0; font-size: 42px; }
+    header p { font-size: 18px; margin-top: 10px; opacity: 0.9; }
+
+    .btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 22px;
+        background-color: #00c6ff;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 30px;
+        color: #2c5364;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: 0.3s ease;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    /* Blog */
+    .extra-content { display: none; margin-top: 15px; }
+
+    .read-more {
+        color: #0072ff;
+        cursor: pointer;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .tag-btn {
+        padding: 8px 18px;
+        margin: 5px;
+        border: none;
+        border-radius: 20px;
+        background-color: #e0e0e0;
+        cursor: pointer;
+    }
+
+    .tag-btn.active {
+        background-color: #0072ff;
+        color: white;
+    }
+
+    pre {
+        background: #1e1e1e;
+        color: #00ff99;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+    }
+
+    footer {
+        background-color: #203a43;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode { background-color: #121212; color: #e0e0e0; }
+
+    body.dark-mode header {
+        background: linear-gradient(135deg, #000000, #1f1f1f, #2b2b2b);
+    }
+
+    body.dark-mode .card { background-color: #1e1e1e; color: white; }
+
+    body.dark-mode h2 { color: #00c6ff; }
+
+    body.dark-mode footer { background-color: #000; }
+
+    body.dark-mode .tag-btn { background-color: #2c2c2c; color: #ccc; }
+
+    body.dark-mode .tag-btn.active { background-color: #00c6ff; color: black; }
+
+</style>
+</head>
+<body>
+
+<button id="darkToggle" class="dark-toggle">🌙</button>
+
+<header>
+    <h1>Vasif</h1>
+    <p>Cloud & DevOps Consultant | AWS | Azure | Kubernetes | Terraform</p>
+    <a href="cv.pdf" class="btn" download>Download CV</a>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>Cloud & DevOps Engineer with 7+ years experience designing scalable AWS & Azure infrastructure, automation, and Kubernetes deployments.</p>
+</section>
+
+<section>
+    <h2>Technical Skills</h2>
+    <div class="grid">
+        <div class="card"><strong>Cloud:</strong><br>AWS, Azure</div>
+        <div class="card"><strong>IaC:</strong><br>Terraform, CloudFormation</div>
+        <div class="card"><strong>Containers:</strong><br>Docker, Kubernetes, Helm</div>
+        <div class="card"><strong>CI/CD:</strong><br>GitHub Actions, Jenkins, GitLab</div>
+        <div class="card"><strong>Scripting:</strong><br>Bash, Python</div>
+        <div class="card"><strong>Monitoring:</strong><br>Prometheus, Grafana, Loki</div>
+        <div class="card"><strong>OS:</strong><br>Linux (RHEL, Ubuntu)</div>
+        <div class="card"><strong>Security:</strong><br>IAM, Security Groups, RBAC</div>
+    </div>
+</section>
+
+<section>
+    <h2>Blog & Project Walkthroughs</h2>
+
+    <div style="text-align:center; margin-bottom:20px;">
+        <input type="text" id="blogSearch" placeholder="Search blog posts..."
+               style="padding:12px 20px; width:60%; max-width:400px; border-radius:30px; border:1px solid #ccc;">
+    </div>
+
+    <div style="text-align:center; margin-bottom:30px;">
+        <button class="tag-btn active" data-tag="all">All</button>
+        <button class="tag-btn" data-tag="aws">AWS</button>
+        <button class="tag-btn" data-tag="azure">Azure</button>
+        <button class="tag-btn" data-tag="terraform">Terraform</button>
+        <button class="tag-btn" data-tag="kubernetes">Kubernetes</button>
+        <button class="tag-btn" data-tag="cicd">CI/CD</button>
+    </div>
+
+    <div class="grid">
+
+        <div class="card blog-post" data-tags="aws terraform kubernetes">
+            <h3>EKS Deployment using Terraform</h3>
+            <p>Provisioned EKS with VPC, IAM roles, Nodegroups.</p>
+            <div class="extra-content">
+                <pre><code>
+terraform init
+terraform apply
+kubectl get nodes
+                </code></pre>
+            </div>
+            <span class="read-more">Read More</span>
+        </div>
+
+        <div class="card blog-post" data-tags="azure monitoring">
+            <h3>Azure Monitoring with Grafana</h3>
+            <p>Centralized logging using Grafana & Loki.</p>
+            <div class="extra-content">
+                <pre><code>
+sudo systemctl start grafana-server
+docker run -d grafana/loki
+                </code></pre>
+            </div>
+            <span class="read-more">Read More</span>
+        </div>
+
+        <div class="card blog-post" data-tags="aws cicd kubernetes">
+            <h3>CI/CD with GitHub Actions</h3>
+            <p>Automated Docker build & deploy to EKS.</p>
+            <div class="extra-content">
+                <pre><code>
+docker build -t app .
+docker push ecr-repo
+kubectl apply -f deploy.yaml
+                </code></pre>
+            </div>
+            <span class="read-more">Read More</span>
+        </div>
+
+        <div class="card blog-post" data-tags="terraform aws">
+            <h3>Terraform Remote Backend Setup</h3>
+            <p>Configured S3 backend with DynamoDB locking.</p>
+            <div class="extra-content">
+                <pre><code>
+terraform {
+ backend "s3" {
+   bucket = "tf-state"
+   dynamodb_table = "tf-lock"
+ }
+}
+                </code></pre>
+            </div>
+            <span class="read-more">Read More</span>
+        </div>
+
+        <div class="card blog-post" data-tags="kubernetes">
+            <h3>Kubernetes Ingress Setup</h3>
+            <p>Configured ALB Ingress Controller for EKS.</p>
+            <div class="extra-content">
+                <pre><code>
+kubectl apply -f ingress.yaml
+kubectl get ingress
+                </code></pre>
+            </div>
+            <span class="read-more">Read More</span>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Vasif | Cloud & DevOps Consultant</p>
+</footer>
+
+<script>
+    const toggleButton = document.getElementById('darkToggle');
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        toggleButton.textContent = "☀️";
+    }
+
+    toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const enabled = document.body.classList.contains("dark-mode");
+        localStorage.setItem("darkMode", enabled ? "enabled" : "disabled");
+        toggleButton.textContent = enabled ? "☀️" : "🌙";
+    });
+
+    const searchInput = document.getElementById('blogSearch');
+    const posts = document.querySelectorAll('.blog-post');
+    const tagButtons = document.querySelectorAll('.tag-btn');
+    let selectedTag = "all";
+
+    function filterPosts() {
+        const searchText = searchInput.value.toLowerCase();
+        posts.forEach(post => {
+            const text = post.innerText.toLowerCase();
+            const tags = post.dataset.tags;
+            const matchesSearch = text.includes(searchText);
+            const matchesTag = selectedTag === "all" || tags.includes(selectedTag);
+            post.style.display = (matchesSearch && matchesTag) ? "block" : "none";
+        });
+    }
+
+    searchInput.addEventListener('keyup', filterPosts);
+
+    tagButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tagButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            selectedTag = button.dataset.tag;
+            filterPosts();
+        });
+    });
+
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', function() {
+            const extra = this.previousElementSibling;
+            if (extra.style.display === "block") {
+                extra.style.display = "none";
+                this.textContent = "Read More";
+            } else {
+                extra.style.display = "block";
+                this.textContent = "Read Less";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
