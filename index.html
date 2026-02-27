@@ -8,13 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;transition:0.3s;}
 body{background:#0f172a;color:#ffffff;}
+body.light-mode{background:#f8fafc;color:#0f172a;}
+
 .container{width:90%;max-width:1200px;margin:auto;}
+
 nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center;}
 nav h2{font-weight:800;font-size:22px;}
-nav a{text-decoration:none;color:white;margin-left:25px;opacity:.8;}
+nav a{text-decoration:none;color:inherit;margin-left:25px;opacity:.8;}
 nav a:hover{opacity:1;}
+
+.toggle-btn{
+cursor:pointer;
+padding:8px 16px;
+border-radius:20px;
+border:1px solid #334155;
+font-size:14px;
+}
+
 .hero{padding:120px 0;text-align:center;}
 .hero h1{font-size:50px;font-weight:800;line-height:1.2;}
 .hero span{
@@ -22,39 +34,54 @@ background:linear-gradient(90deg,#38bdf8,#818cf8);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;}
 .hero p{margin-top:20px;font-size:18px;opacity:.7;}
+
 .cta-buttons{margin-top:30px;}
+
 .btn-primary{
 padding:12px 28px;border-radius:30px;
 background:linear-gradient(90deg,#38bdf8,#818cf8);
 color:white;text-decoration:none;font-weight:600;margin:10px;display:inline-block;}
+
 .btn-secondary{
 padding:12px 28px;border-radius:30px;
-border:1px solid #334155;color:white;text-decoration:none;margin:10px;}
+border:1px solid #334155;color:inherit;text-decoration:none;margin:10px;}
+
 section{padding:100px 0;}
 .section-title{text-align:center;font-size:36px;font-weight:700;margin-bottom:60px;}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+
 .card{
 background:#1e293b;padding:30px;border-radius:16px;
 border:1px solid #334155;transition:.3s ease;}
+body.light-mode .card{background:white;border:1px solid #ddd;}
 .card:hover{transform:translateY(-8px);border-color:#38bdf8;}
-.card h3{margin-bottom:15px;}
+
 .metrics{display:flex;justify-content:space-around;text-align:center;flex-wrap:wrap;gap:40px;}
 .metric h2{
 font-size:50px;font-weight:800;
 background:linear-gradient(90deg,#38bdf8,#818cf8);
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.metric p{margin-top:10px;opacity:.7;}
+
 .blog-controls{text-align:center;margin-bottom:40px;}
-.blog-controls input{
-padding:10px;width:250px;border-radius:8px;border:none;margin-right:10px;}
-.blog-controls select{
-padding:10px;border-radius:8px;border:none;}
+.blog-controls input,.blog-controls select{
+padding:10px;border-radius:8px;border:none;margin:5px;}
+
 .tag{
 display:inline-block;background:#334155;padding:5px 10px;
 border-radius:20px;font-size:12px;margin-right:5px;margin-top:10px;}
+body.light-mode .tag{background:#e2e8f0;}
+
+.read-more{
+margin-top:15px;color:#38bdf8;cursor:pointer;font-weight:600;display:inline-block;
+}
+
 .cta-section{
 background:linear-gradient(90deg,#1e293b,#0f172a);
 padding:80px 20px;text-align:center;border-top:1px solid #334155;}
+body.light-mode .cta-section{
+background:#e2e8f0;}
+
 footer{text-align:center;padding:30px 0;border-top:1px solid #334155;opacity:.6;}
 </style>
 </head>
@@ -70,6 +97,7 @@ footer{text-align:center;padding:30px 0;border-top:1px solid #334155;opacity:.6;
 <a href="#services">Services</a>
 <a href="#impact">Impact</a>
 <a href="#blog">Blog</a>
+<button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
 </div>
 </nav>
 
@@ -84,77 +112,49 @@ footer{text-align:center;padding:30px 0;border-top:1px solid #334155;opacity:.6;
 
 </div>
 
-<!-- ABOUT -->
 <section id="about">
 <div class="container">
 <h2 class="section-title">About Me</h2>
 <div class="card">
 <p>
-I am a Cloud Consultant at a leading provider of payment solutions in the FinTech sector.
-I have over 9 years of experience in DevOps and cloud engineering, holding certifications
-from AWS, Azure, Java, NetApp, NetBackup and ITIL.
+I am a Cloud Consultant in the FinTech sector with 9+ years of experience in DevOps and cloud engineering.
+Certified across AWS, Azure, Java, NetApp, NetBackup and ITIL.
 </p><br>
 <p>
-My mission is to help clients design, implement, and optimize their cloud infrastructure
-using best practices and modern tools. I have delivered and migrated multiple projects
-on AWS and Azure using Jenkins, GitHub, Terraform, Ansible, Docker, Kubernetes,
-Shell Script, Prometheus and Grafana.
+I design, implement and optimize scalable infrastructure using Terraform, Jenkins, GitHub,
+Ansible, Docker, Kubernetes, Prometheus and Grafana.
 </p><br>
 <p>
-Strong background in CI/CD, Infrastructure as Code (IaC), configuration management,
-monitoring and logging. Passionate about solving complex problems and building scalable solutions.
+Strong background in CI/CD, Infrastructure as Code, monitoring and cloud migrations.
+Passionate about solving complex cloud challenges.
 </p>
 </div>
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <div class="container">
 <h2 class="section-title">Services</h2>
 <div class="grid">
-<div class="card">
-<h3>Cloud Architecture</h3>
-<p>Secure, scalable, cost-optimized AWS & Azure infrastructure.</p>
-</div>
-<div class="card">
-<h3>DevOps Automation</h3>
-<p>CI/CD pipelines, Infrastructure as Code, GitOps.</p>
-</div>
-<div class="card">
-<h3>Kubernetes Engineering</h3>
-<p>Production-grade Kubernetes deployments with monitoring & scaling.</p>
-</div>
-<div class="card">
-<h3>Cloud Migration</h3>
-<p>Zero downtime cloud migration strategies.</p>
-</div>
+<div class="card"><h3>Cloud Architecture</h3><p>Secure & scalable AWS/Azure design.</p></div>
+<div class="card"><h3>DevOps Automation</h3><p>CI/CD & Infrastructure as Code.</p></div>
+<div class="card"><h3>Kubernetes Engineering</h3><p>Production-grade K8s deployments.</p></div>
+<div class="card"><h3>Cloud Migration</h3><p>Zero downtime migrations.</p></div>
 </div>
 </div>
 </section>
 
-<!-- IMPACT -->
 <section id="impact">
 <div class="container">
 <h2 class="section-title">Impact</h2>
 <div class="metrics">
-<div class="metric">
-<h2>9+</h2>
-<p>Years Experience</p>
-</div>
-<div class="metric">
-<h2>50+</h2>
-<p>Projects Delivered</p>
-</div>
-<div class="metric">
-<h2>99.99%</h2>
-<p>Uptime Designed</p>
-</div>
+<div class="metric"><h2>9+</h2><p>Years Experience</p></div>
+<div class="metric"><h2>50+</h2><p>Projects Delivered</p></div>
+<div class="metric"><h2>99.99%</h2><p>Uptime Designed</p></div>
 </div>
 </div>
 </section>
 
-<!-- BLOG -->
 <section id="blog">
 <div class="container">
 <h2 class="section-title">Blog & Project Walkthroughs</h2>
@@ -170,27 +170,30 @@ monitoring and logging. Passionate about solving complex problems and building s
 </select>
 </div>
 
-<div class="grid" id="blogContainer">
+<div class="grid">
 
 <div class="card blog-post" data-tags="aws devops">
 <h3>Deploying 3-Tier Architecture in AWS</h3>
-<p>Step-by-step guide to deploying scalable ALB, EC2, RDS with Auto Scaling.</p>
-<div class="tag">AWS</div>
-<div class="tag">DevOps</div>
+<p class="blog-text">
+Step-by-step guide for ALB, EC2, RDS and Auto Scaling setup...
+<span class="more-text" style="display:none;">
+ Includes security groups, IAM roles, scaling policies and monitoring best practices for production readiness.
+</span>
+</p>
+<span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+<div class="tag">AWS</div><div class="tag">DevOps</div>
 </div>
 
 <div class="card blog-post" data-tags="terraform aws">
 <h3>Terraform Remote Backend Setup</h3>
-<p>Configure S3 backend with DynamoDB locking for production Terraform workflows.</p>
-<div class="tag">Terraform</div>
-<div class="tag">AWS</div>
-</div>
-
-<div class="card blog-post" data-tags="kubernetes devops">
-<h3>Kubernetes Production Hardening Checklist</h3>
-<p>Security best practices including RBAC, Network Policies and Monitoring.</p>
-<div class="tag">Kubernetes</div>
-<div class="tag">DevOps</div>
+<p class="blog-text">
+How to configure S3 backend with DynamoDB locking...
+<span class="more-text" style="display:none;">
+ Covers state locking, versioning, encryption and CI/CD pipeline integration.
+</span>
+</p>
+<span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+<div class="tag">Terraform</div><div class="tag">AWS</div>
 </div>
 
 </div>
@@ -210,6 +213,27 @@ monitoring and logging. Passionate about solving complex problems and building s
 </footer>
 
 <script>
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+localStorage.setItem("theme",
+document.body.classList.contains("light-mode")?"light":"dark");
+}
+
+if(localStorage.getItem("theme")==="light"){
+document.body.classList.add("light-mode");
+}
+
+function toggleReadMore(btn){
+const moreText=btn.parentElement.querySelector(".more-text");
+if(moreText.style.display==="none"){
+moreText.style.display="inline";
+btn.innerText="Read Less";
+}else{
+moreText.style.display="none";
+btn.innerText="Read More";
+}
+}
+
 const searchInput=document.getElementById("searchInput");
 const tagFilter=document.getElementById("tagFilter");
 const posts=document.querySelectorAll(".blog-post");
@@ -221,10 +245,8 @@ const selectedTag=tagFilter.value;
 posts.forEach(post=>{
 const text=post.innerText.toLowerCase();
 const tags=post.getAttribute("data-tags");
-
 const matchesSearch=text.includes(searchText);
 const matchesTag=selectedTag==="all"||tags.includes(selectedTag);
-
 post.style.display=(matchesSearch&&matchesTag)?"block":"none";
 });
 }
