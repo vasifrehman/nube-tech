@@ -3,348 +3,671 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vasif | Cloud & DevOps Consultant</title>
+<title>Vasif | Cloud & DevOps Architect</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f7fb;
-        color: #333;
-        transition: 0.3s ease;
-    }
-
-    /* Dark Toggle Button */
-    .dark-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        font-size: 18px;
-        background-color: #111;
-        color: white;
-        z-index: 1000;
-        transition: 0.3s ease;
-    }
-
-    .dark-toggle:hover { transform: scale(1.1); }
-
-    header {
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        color: white;
-        padding: 80px 20px;
-        text-align: center;
-    }
-
-    header h1 { margin: 0; font-size: 42px; }
-    header p { font-size: 18px; margin-top: 10px; opacity: 0.9; }
-
-    .btn {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 22px;
-        background-color: #00c6ff;
-        color: white;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: bold;
-    }
-
-    section {
-        padding: 60px 20px;
-        max-width: 1100px;
-        margin: auto;
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 30px;
-        color: #2c5364;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-    }
-
-    .card {
-        background: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        transition: 0.3s ease;
-    }
-
-    .card:hover { transform: translateY(-5px); }
-
-    /* Blog */
-    .extra-content { display: none; margin-top: 15px; }
-
-    .read-more {
-        color: #0072ff;
-        cursor: pointer;
-        font-weight: bold;
-        display: inline-block;
-        margin-top: 10px;
-    }
-
-    .tag-btn {
-        padding: 8px 18px;
-        margin: 5px;
-        border: none;
-        border-radius: 20px;
-        background-color: #e0e0e0;
-        cursor: pointer;
-    }
-
-    .tag-btn.active {
-        background-color: #0072ff;
-        color: white;
-    }
-
-    pre {
-        background: #1e1e1e;
-        color: #00ff99;
-        padding: 15px;
-        border-radius: 8px;
-        overflow-x: auto;
-    }
-
-    footer {
-        background-color: #203a43;
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-
-    /* Dark Mode */
-    body.dark-mode { background-color: #121212; color: #e0e0e0; }
-
-    body.dark-mode header {
-        background: linear-gradient(135deg, #000000, #1f1f1f, #2b2b2b);
-    }
-
-    body.dark-mode .card { background-color: #1e1e1e; color: white; }
-
-    body.dark-mode h2 { color: #00c6ff; }
-
-    body.dark-mode footer { background-color: #000; }
-
-    body.dark-mode .tag-btn { background-color: #2c2c2c; color: #ccc; }
-
-    body.dark-mode .tag-btn.active { background-color: #00c6ff; color: black; }
-
-    .social-links {
-    margin-top: 12px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
-.social-links a {
+body {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navbar */
+nav {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    font-weight: 800;
+    font-size: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero span {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.cta-buttons {
+    margin-top: 30px;
+}
+
+.btn-primary {
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
     color: white;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 12px;
-    transition: all 0.3s ease;
+    margin: 10px;
+    display: inline-block;
 }
 
-.social-links a:hover {
-    color: #00c6ff;
+.btn-secondary {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 1px solid #334155;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
 }
-    
+
+/* Section */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+/* Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    transition: 0.3s ease;
+    border: 1px solid #334155;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+/* Metrics */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.metric h2 {
+    font-size: 40px;
+    color: #38bdf8;
+}
+
+.metric p {
+    opacity: 0.7;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(90deg, #1e293b, #0f172a);
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #334155;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #334155;
+    opacity: 0.6;
+}
 </style>
 </head>
+
 <body>
 
-<button id="darkToggle" class="dark-toggle">🌙</button>
+<div class="container">
 
-<header>
-    <h1>Vasif</h1>
-    <p>Cloud & DevOps Consultant | AWS | Azure | Kubernetes | Terraform</p>
-    <a href="cv.pdf" class="btn" download>Download CV</a>
-</header>
+<nav>
+    <h2>Vasif</h2>
+    <div>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>I Build <span>Scalable Cloud Infrastructure</span><br> For High-Growth Companies</h1>
+    <p>AWS | Azure | Kubernetes | Terraform | DevOps Automation</p>
+
+    <div class="cta-buttons">
+        <a href="#" class="btn-primary">Book a Consultation</a>
+        <a href="#" class="btn-secondary">Download CV</a>
+    </div>
+</div>
+
+</div>
 
 <section>
-    <h2>About Me</h2>
-    <p>I am a Cloud Consultant, at a leading provider of payment solutions and services in the FinTech sector. I have over 9 years of experience in DevOps and cloud engineering, and I hold multiple certifications from AWS, Azure, Java, NetApp, NetBackup and ITIL.</p>
-    <p>My mission is to help clients design, implement, and optimize their cloud infrastructure and applications using best practices and cutting-edge tools. I have successfully delivered and migrated multiple projects on AWS and Azure platforms, using technologies such as Jenkins, Github, Terraform, Ansible, Docker, Kubernetes, Shell Script, Prometheus and Grafana. </p>
-    <p>I have a strong background in continuous integration and delivery (CI/CD), infrastructure as code (IAC), configuration management, and monitoring and logging. I am passionate about solving complex and challenging problems, and delivering high-quality and scalable solutions.</p>
+<div class="container">
+    <h2 class="section-title">Services</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Cloud Architecture</h3>
+            <p>Designing secure, scalable, and cost-optimized AWS & Azure infrastructure.</p>
+        </div>
+        <div class="card">
+            <h3>DevOps Automation</h3>
+            <p>CI/CD pipelines, Infrastructure as Code, and GitOps implementations.</p>
+        </div>
+        <div class="card">
+            <h3>Kubernetes Engineering</h3>
+            <p>Production-grade Kubernetes deployments with monitoring & scaling.</p>
+        </div>
+        <div class="card">
+            <h3>Cloud Migration</h3>
+            <p>Seamless migration from on-prem to cloud with zero downtime strategy.</p>
+        </div>
+    </div>
+</div>
 </section>
 
 <section>
-    <h2>Technical Skills</h2>
-    <div class="grid">
-        <div class="card"><strong>Cloud:</strong><br>AWS, Azure</div>
-        <div class="card"><strong>IaC:</strong><br>Terraform, CloudFormation</div>
-        <div class="card"><strong>Containers:</strong><br>Docker, Kubernetes, Helm</div>
-        <div class="card"><strong>CI/CD:</strong><br>GitHub Actions, Jenkins, GitLab</div>
-        <div class="card"><strong>Scripting:</strong><br>Bash, Python</div>
-        <div class="card"><strong>Monitoring:</strong><br>Prometheus, Grafana, Loki</div>
-        <div class="card"><strong>OS:</strong><br>Linux (RHEL, Ubuntu)</div>
-        <div class="card"><strong>Security:</strong><br>IAM, Security Groups, RBAC</div>
+<div class="container">
+    <h2 class="section-title">Impact</h2>
+    <div class="metrics">
+        <div class="metric">
+            <h2>9+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div class="metric">
+            <h2>50+</h2>
+            <p>Projects Delivered</p>
+        </div>
+        <div class="metric">
+            <h2>99.99%</h2>
+            <p>Uptime Designed</p>
+        </div>
     </div>
+</div>
 </section>
 
-<section>
-    <h2>Blog & Project Walkthroughs</h2>
-
-    <div style="text-align:center; margin-bottom:20px;">
-        <input type="text" id="blogSearch" placeholder="Search blog posts..."
-               style="padding:12px 20px; width:60%; max-width:400px; border-radius:30px; border:1px solid #ccc;">
-    </div>
-
-    <div style="text-align:center; margin-bottom:30px;">
-        <button class="tag-btn active" data-tag="all">All</button>
-        <button class="tag-btn" data-tag="aws">AWS</button>
-        <button class="tag-btn" data-tag="azure">Azure</button>
-        <button class="tag-btn" data-tag="terraform">Terraform</button>
-        <button class="tag-btn" data-tag="kubernetes">Kubernetes</button>
-        <button class="tag-btn" data-tag="cicd">CI/CD</button>
-    </div>
-
-    <div class="grid">
-
-        <div class="card blog-post" data-tags="aws terraform kubernetes">
-            <h3>EKS Deployment using Terraform</h3>
-            <p>Provisioned EKS with VPC, IAM roles, Nodegroups.</p>
-            <div class="extra-content">
-                <pre><code>
-terraform init
-terraform apply
-kubectl get nodes
-                </code></pre>
-            </div>
-            <span class="read-more">Read More</span>
-        </div>
-
-        <div class="card blog-post" data-tags="azure monitoring">
-            <h3>Azure Monitoring with Grafana</h3>
-            <p>Centralized logging using Grafana & Loki.</p>
-            <div class="extra-content">
-                <pre><code>
-sudo systemctl start grafana-server
-docker run -d grafana/loki
-                </code></pre>
-            </div>
-            <span class="read-more">Read More</span>
-        </div>
-
-        <div class="card blog-post" data-tags="aws cicd kubernetes">
-            <h3>CI/CD with GitHub Actions</h3>
-            <p>Automated Docker build & deploy to EKS.</p>
-            <div class="extra-content">
-                <pre><code>
-docker build -t app .
-docker push ecr-repo
-kubectl apply -f deploy.yaml
-                </code></pre>
-            </div>
-            <span class="read-more">Read More</span>
-        </div>
-
-        <div class="card blog-post" data-tags="terraform aws">
-            <h3>Terraform Remote Backend Setup</h3>
-            <p>Configured S3 backend with DynamoDB locking.</p>
-            <div class="extra-content">
-                <pre><code>
-terraform {
- backend "s3" {
-   bucket = "tf-state"
-   dynamodb_table = "tf-lock"
- }
-}
-                </code></pre>
-            </div>
-            <span class="read-more">Read More</span>
-        </div>
-
-        <div class="card blog-post" data-tags="kubernetes">
-            <h3>Kubernetes Ingress Setup</h3>
-            <p>Configured ALB Ingress Controller for EKS.</p>
-            <div class="extra-content">
-                <pre><code>
-kubectl apply -f ingress.yaml
-kubectl get ingress
-                </code></pre>
-            </div>
-            <span class="read-more">Read More</span>
-        </div>
-
+<section class="cta-section">
+    <h2>Ready to Modernize Your Cloud?</h2>
+    <p style="margin-top:15px; opacity:0.7;">Let’s build secure, scalable infrastructure for your business.</p>
+    <div class="cta-buttons">
+        <a href="#" class="btn-primary">Let’s Talk</a>
     </div>
 </section>
 
 <footer>
-       <p>© 2026 Vasif Shola | Cloud & DevOps Engineer</p>
-    
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/syed-vasif-ur-rehman/" target="_blank">
-            🔗 LinkedIn
-        </a>
-        <a href="https://github.com/vasifrehman" target="_blank">
-            💻 GitHub
-        </a>
+    © 2026 Vasif | Cloud & DevOps Architect
+</footer>
+
+</body>
+</html>
+
+add an about sention here and add this.
+"About Me
+
+I am a Cloud Consultant, at a leading provider of payment solutions and services in the FinTech sector. I have over 9 years of experience in DevOps and cloud engineering, and I hold multiple certifications from AWS, Azure, Java, NetApp, NetBackup and ITIL.
+
+My mission is to help clients design, implement, and optimize their cloud infrastructure and applications using best practices and cutting-edge tools. I have successfully delivered and migrated multiple projects on AWS and Azure platforms, using technologies such as Jenkins, Github, Terraform, Ansible, Docker, Kubernetes, Shell Script, Prometheus and Grafana.
+
+I have a strong background in continuous integration and delivery (CI/CD), infrastructure as code (IAC), configuration management, and monitoring and logging. I am passionate about solving complex and challenging problems, and delivering high-quality and scalable solutions."
+
+also give a Blog & Project Walkthroughs section where i can write blogs or tech work and it must be able  to serch the blog and also tags
+
+ChatGPT said:
+
+Here is your updated complete website code with:
+
+✅ New About Me section (professionally structured)
+✅ Blog & Project Walkthroughs section
+✅ Blog search functionality
+✅ Blog filter by tags
+✅ Clean expandable blog cards (Ready to add more posts easily)
+✅ Fully integrated into your existing design
+
+You can directly host this on S3.
+✅ COMPLETE UPDATED WEBSITE CODE
+
+🔥 What You Now Have
+
+    Premium consulting-style landing page
+
+    Strong About positioning
+
+    Searchable blog system
+
+    Tag-based filtering
+
+    Easy to scale (just duplicate a blog card)
+
+    Fully static (Perfect for S3 hosting)
+
+If you want next level:
+
+    🔥 Dark Mode toggle
+
+    🔥 Blog separate dynamic page
+
+    🔥 CMS-like blog (Markdown based)
+
+    🔥 Animated premium $5K agency look
+
+    🔥 SEO optimization
+
+    🔥 Contact form with AWS SES integration
+
+Tell me which level you want next 😎
+
+You said:
+addd impact sention here "Impact
+9+
+
+Years Experience
+50+
+
+Projects Delivered
+99.99%
+
+Uptime Designed"
+
+ChatGPT said:
+
+Perfect 👍 I’ve added your Impact section back in a premium styled format, positioned after Services and before Blog for strong authority flow.
+
+Here is your updated Impact section code.
+Just paste it after the Services section and before the Blog section.
+✅ ADD THIS IMPACT SECTION
+
+<!-- IMPACT SECTION -->
+<section id="impact">
+<div class="container">
+    <h2 class="section-title">Impact</h2>
+
+    <div class="metrics">
+        <div class="metric">
+            <h2>9+</h2>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="metric">
+            <h2>50+</h2>
+            <p>Projects Delivered</p>
+        </div>
+
+        <div class="metric">
+            <h2>99.99%</h2>
+            <p>Uptime Designed</p>
+        </div>
     </div>
-    
+</div>
+</section>
+
+✅ Optional (If Metrics Styling Is Missing)
+
+If you removed it earlier, ensure this CSS exists inside your <style>:
+
+.metrics {
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.metric h2 {
+    font-size:50px;
+    font-weight:800;
+    background: linear-gradient(90deg,#38bdf8,#818cf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.metric p {
+    margin-top:10px;
+    opacity:0.7;
+    font-size:16px;
+}
+
+🔥 Pro Tip (Authority Boost)
+
+If you're targeting:
+
+    FinTech clients
+
+    UAE businesses
+
+    Enterprise DevOps roles
+
+You can upgrade numbers like:
+
+    9+ → 9+ Years in Cloud & DevOps
+
+    50+ → 50+ Production Deployments
+
+    99.99% → 99.99% High Availability Architectures
+
+If you want, I can now:
+
+    Animate the numbers (count-up effect)
+
+    Make the impact section look like a premium consulting site
+
+    Add client logos row
+
+    Add certifications row
+
+    Make entire site look like a $10K agency brand
+
+Tell me what level you want next 🚀
+
+You said:
+give me the full website code
+
+ChatGPT said:
+
+Here is your complete final website code including:
+
+    ✅ Hero Section
+
+    ✅ About Section
+
+    ✅ Services
+
+    ✅ Impact Section
+
+    ✅ Blog with Search + Tag Filter
+
+    ✅ Premium UI styling
+
+    ✅ Fully static (Ready for S3 hosting)
+
+You can copy this and deploy directly.
+✅ FULL WEBSITE CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasif | Cloud & DevOps Architect</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#0f172a;color:#ffffff;}
+.container{width:90%;max-width:1200px;margin:auto;}
+nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center;}
+nav h2{font-weight:800;font-size:22px;}
+nav a{text-decoration:none;color:white;margin-left:25px;opacity:.8;}
+nav a:hover{opacity:1;}
+.hero{padding:120px 0;text-align:center;}
+.hero h1{font-size:50px;font-weight:800;line-height:1.2;}
+.hero span{
+background:linear-gradient(90deg,#38bdf8,#818cf8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;}
+.hero p{margin-top:20px;font-size:18px;opacity:.7;}
+.cta-buttons{margin-top:30px;}
+.btn-primary{
+padding:12px 28px;border-radius:30px;
+background:linear-gradient(90deg,#38bdf8,#818cf8);
+color:white;text-decoration:none;font-weight:600;margin:10px;display:inline-block;}
+.btn-secondary{
+padding:12px 28px;border-radius:30px;
+border:1px solid #334155;color:white;text-decoration:none;margin:10px;}
+section{padding:100px 0;}
+.section-title{text-align:center;font-size:36px;font-weight:700;margin-bottom:60px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.card{
+background:#1e293b;padding:30px;border-radius:16px;
+border:1px solid #334155;transition:.3s ease;}
+.card:hover{transform:translateY(-8px);border-color:#38bdf8;}
+.card h3{margin-bottom:15px;}
+.metrics{display:flex;justify-content:space-around;text-align:center;flex-wrap:wrap;gap:40px;}
+.metric h2{
+font-size:50px;font-weight:800;
+background:linear-gradient(90deg,#38bdf8,#818cf8);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.metric p{margin-top:10px;opacity:.7;}
+.blog-controls{text-align:center;margin-bottom:40px;}
+.blog-controls input{
+padding:10px;width:250px;border-radius:8px;border:none;margin-right:10px;}
+.blog-controls select{
+padding:10px;border-radius:8px;border:none;}
+.tag{
+display:inline-block;background:#334155;padding:5px 10px;
+border-radius:20px;font-size:12px;margin-right:5px;margin-top:10px;}
+.cta-section{
+background:linear-gradient(90deg,#1e293b,#0f172a);
+padding:80px 20px;text-align:center;border-top:1px solid #334155;}
+footer{text-align:center;padding:30px 0;border-top:1px solid #334155;opacity:.6;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+<h2>Vasif</h2>
+<div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#impact">Impact</a>
+<a href="#blog">Blog</a>
+</div>
+</nav>
+
+<div class="hero">
+<h1>I Build <span>Scalable Cloud Infrastructure</span><br>For High-Growth Companies</h1>
+<p>AWS | Azure | Kubernetes | Terraform | DevOps Automation</p>
+<div class="cta-buttons">
+<a href="#" class="btn-primary">Book a Consultation</a>
+<a href="#" class="btn-secondary">Download CV</a>
+</div>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<div class="card">
+<p>
+I am a Cloud Consultant at a leading provider of payment solutions in the FinTech sector.
+I have over 9 years of experience in DevOps and cloud engineering, holding certifications
+from AWS, Azure, Java, NetApp, NetBackup and ITIL.
+</p><br>
+<p>
+My mission is to help clients design, implement, and optimize their cloud infrastructure
+using best practices and modern tools. I have delivered and migrated multiple projects
+on AWS and Azure using Jenkins, GitHub, Terraform, Ansible, Docker, Kubernetes,
+Shell Script, Prometheus and Grafana.
+</p><br>
+<p>
+Strong background in CI/CD, Infrastructure as Code (IaC), configuration management,
+monitoring and logging. Passionate about solving complex problems and building scalable solutions.
+</p>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<div class="container">
+<h2 class="section-title">Services</h2>
+<div class="grid">
+<div class="card">
+<h3>Cloud Architecture</h3>
+<p>Secure, scalable, cost-optimized AWS & Azure infrastructure.</p>
+</div>
+<div class="card">
+<h3>DevOps Automation</h3>
+<p>CI/CD pipelines, Infrastructure as Code, GitOps.</p>
+</div>
+<div class="card">
+<h3>Kubernetes Engineering</h3>
+<p>Production-grade Kubernetes deployments with monitoring & scaling.</p>
+</div>
+<div class="card">
+<h3>Cloud Migration</h3>
+<p>Zero downtime cloud migration strategies.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+<div class="container">
+<h2 class="section-title">Impact</h2>
+<div class="metrics">
+<div class="metric">
+<h2>9+</h2>
+<p>Years Experience</p>
+</div>
+<div class="metric">
+<h2>50+</h2>
+<p>Projects Delivered</p>
+</div>
+<div class="metric">
+<h2>99.99%</h2>
+<p>Uptime Designed</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+<div class="container">
+<h2 class="section-title">Blog & Project Walkthroughs</h2>
+
+<div class="blog-controls">
+<input type="text" id="searchInput" placeholder="Search blog...">
+<select id="tagFilter">
+<option value="all">All Tags</option>
+<option value="aws">AWS</option>
+<option value="terraform">Terraform</option>
+<option value="kubernetes">Kubernetes</option>
+<option value="devops">DevOps</option>
+</select>
+</div>
+
+<div class="grid" id="blogContainer">
+
+<div class="card blog-post" data-tags="aws devops">
+<h3>Deploying 3-Tier Architecture in AWS</h3>
+<p>Step-by-step guide to deploying scalable ALB, EC2, RDS with Auto Scaling.</p>
+<div class="tag">AWS</div>
+<div class="tag">DevOps</div>
+</div>
+
+<div class="card blog-post" data-tags="terraform aws">
+<h3>Terraform Remote Backend Setup</h3>
+<p>Configure S3 backend with DynamoDB locking for production Terraform workflows.</p>
+<div class="tag">Terraform</div>
+<div class="tag">AWS</div>
+</div>
+
+<div class="card blog-post" data-tags="kubernetes devops">
+<h3>Kubernetes Production Hardening Checklist</h3>
+<p>Security best practices including RBAC, Network Policies and Monitoring.</p>
+<div class="tag">Kubernetes</div>
+<div class="tag">DevOps</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>Ready to Modernize Your Cloud?</h2>
+<p style="margin-top:15px;opacity:.7;">Let’s build secure, scalable infrastructure.</p>
+<div class="cta-buttons">
+<a href="#" class="btn-primary">Let’s Talk</a>
+</div>
+</section>
+
+<footer>
+© 2026 Vasif | Cloud & DevOps Architect
 </footer>
 
 <script>
-    const toggleButton = document.getElementById('darkToggle');
+const searchInput=document.getElementById("searchInput");
+const tagFilter=document.getElementById("tagFilter");
+const posts=document.querySelectorAll(".blog-post");
 
-    if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        toggleButton.textContent = "☀️";
-    }
+function filterBlogs(){
+const searchText=searchInput.value.toLowerCase();
+const selectedTag=tagFilter.value;
 
-    toggleButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const enabled = document.body.classList.contains("dark-mode");
-        localStorage.setItem("darkMode", enabled ? "enabled" : "disabled");
-        toggleButton.textContent = enabled ? "☀️" : "🌙";
-    });
+posts.forEach(post=>{
+const text=post.innerText.toLowerCase();
+const tags=post.getAttribute("data-tags");
 
-    const searchInput = document.getElementById('blogSearch');
-    const posts = document.querySelectorAll('.blog-post');
-    const tagButtons = document.querySelectorAll('.tag-btn');
-    let selectedTag = "all";
+const matchesSearch=text.includes(searchText);
+const matchesTag=selectedTag==="all"||tags.includes(selectedTag);
 
-    function filterPosts() {
-        const searchText = searchInput.value.toLowerCase();
-        posts.forEach(post => {
-            const text = post.innerText.toLowerCase();
-            const tags = post.dataset.tags;
-            const matchesSearch = text.includes(searchText);
-            const matchesTag = selectedTag === "all" || tags.includes(selectedTag);
-            post.style.display = (matchesSearch && matchesTag) ? "block" : "none";
-        });
-    }
+post.style.display=(matchesSearch&&matchesTag)?"block":"none";
+});
+}
 
-    searchInput.addEventListener('keyup', filterPosts);
-
-    tagButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            tagButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            selectedTag = button.dataset.tag;
-            filterPosts();
-        });
-    });
-
-    document.querySelectorAll('.read-more').forEach(button => {
-        button.addEventListener('click', function() {
-            const extra = this.previousElementSibling;
-            if (extra.style.display === "block") {
-                extra.style.display = "none";
-                this.textContent = "Read More";
-            } else {
-                extra.style.display = "block";
-                this.textContent = "Read Less";
-            }
-        });
-    });
+searchInput.addEventListener("keyup",filterBlogs);
+tagFilter.addEventListener("change",filterBlogs);
 </script>
 
 </body>
