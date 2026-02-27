@@ -173,47 +173,67 @@ Passionate about solving complex cloud challenges.
 <div class="grid">
 
 <div class="card blog-post" data-tags="aws devops">
-<h3>How I Built My Portfolio Contact Form Using AWS Serverless</h3>
-<p class="blog-text">
+<h3>🚀How I Built My Portfolio Contact Form Using AWS Serverless</h3>
+<p class="blog-meta">Published by Vasif | Cloud & DevOps | Serverless Architecture</p>
 This approach not only solved the problem — it became a portfolio showcase of real-world cloud engineering...
 <span class="more-text" style="display:none;">
-When building my portfolio website hosted on GitHub Pages, I faced a common limitation:
-Static websites cannot process backend form submissions.
-Instead of using third-party form providers, I decided to build a fully serverless backend using AWS.
+      <p>
+        When building my portfolio website hosted on GitHub Pages, I faced a common limitation:
+        static websites cannot process backend form submissions.
+      </p>
 
-🏗 Architecture
-Frontend: Hosted on GitHub Pages
-Backend: AWS Lambda
-API Gateway (HTTP API)
-Amazon SES for email delivery
+      <div class="read-more-content">
+        <h4>🏗 Architecture Overview</h4>
+        <ul>
+          <li>Frontend: GitHub Pages (Static Hosting)</li>
+          <li>AWS Lambda (Backend Processing)</li>
+          <li>API Gateway (HTTP API)</li>
+          <li>Amazon SES (Email Delivery)</li>
+          <li>Terraform (Infrastructure as Code)</li>
+        </ul>
 
-🔥 Why Serverless?
-No servers to manage
-Fully scalable
-Pay per request
-Production-grade security
-Real cloud architecture demonstration
+        <h4>🔥 Why I Chose Serverless</h4>
+        <ul>
+          <li>No servers to manage</li>
+          <li>Fully scalable architecture</li>
+          <li>Pay-per-request cost model</li>
+          <li>Production-grade security</li>
+          <li>Demonstrates real AWS cloud expertise</li>
+        </ul>
 
-⚙ Implementation Steps
-Created a Lambda function using Node.js 18.
-Attached IAM policy allowing ses:SendEmail.
-Created an HTTP API Gateway with CORS enabled.
-Integrated Lambda with API Gateway.
-Verified sender email in SES.
-Connected frontend form using fetch().
+        <h4>⚙ Implementation Steps</h4>
+        <ol>
+          <li>Created a Lambda function using Node.js 18.</li>
+          <li>Attached IAM policy allowing ses:SendEmail.</li>
+          <li>Created an HTTP API Gateway with CORS enabled.</li>
+          <li>Integrated Lambda with API Gateway.</li>
+          <li>Verified sender email in Amazon SES.</li>
+          <li>Connected frontend form using JavaScript fetch().</li>
+        </ol>
 
-💡 Key Benefits
-Fully automated using Terraform
-No third-party dependencies
-Secure and scalable
-Demonstrates real AWS expertise
+        <h4>💡 Key Benefits</h4>
+        <ul>
+          <li>Fully automated using Terraform</li>
+          <li>No third-party dependencies</li>
+          <li>Secure, scalable, production-ready</li>
+          <li>Showcases real cloud engineering skills</li>
+        </ul>
 
-🛠 Tech Stack
-Terraform
-AWS Lambda
-API Gateway
-Amazon SES
-GitHub Pages
+        <h4>📈 Future Enhancements</h4>
+        <ul>
+          <li>Store leads in DynamoDB</li>
+          <li>Add Google reCAPTCHA</li>
+          <li>Custom domain with Route53 + ACM</li>
+          <li>CloudFront CDN integration</li>
+          <li>Slack notification integration</li>
+        </ul>
+
+        <p class="blog-footer">
+          Built and deployed using Infrastructure as Code (Terraform).  
+          Source code available on GitHub.
+        </p>
+      </div>
+
 </span>
 </p>
 <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
@@ -306,4 +326,5 @@ tagFilter.addEventListener("change",filterBlogs);
 
 </body>
 </html>
+
 
