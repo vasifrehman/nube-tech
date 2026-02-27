@@ -173,6 +173,55 @@ Passionate about solving complex cloud challenges.
 <div class="grid">
 
 <div class="card blog-post" data-tags="aws devops">
+<h3>How I Built My Portfolio Contact Form Using AWS Serverless</h3>
+<p class="blog-text">
+This approach not only solved the problem — it became a portfolio showcase of real-world cloud engineering...
+<span class="more-text" style="display:none;">
+When building my portfolio website hosted on GitHub Pages, I faced a common limitation:
+Static websites cannot process backend form submissions.
+Instead of using third-party form providers, I decided to build a fully serverless backend using AWS.
+
+🏗 Architecture
+Frontend: Hosted on GitHub Pages
+Backend: AWS Lambda
+API Gateway (HTTP API)
+Amazon SES for email delivery
+
+🔥 Why Serverless?
+No servers to manage
+Fully scalable
+Pay per request
+Production-grade security
+Real cloud architecture demonstration
+
+⚙ Implementation Steps
+Created a Lambda function using Node.js 18.
+Attached IAM policy allowing ses:SendEmail.
+Created an HTTP API Gateway with CORS enabled.
+Integrated Lambda with API Gateway.
+Verified sender email in SES.
+Connected frontend form using fetch().
+
+💡 Key Benefits
+Fully automated using Terraform
+No third-party dependencies
+Secure and scalable
+Demonstrates real AWS expertise
+
+🛠 Tech Stack
+Terraform
+AWS Lambda
+API Gateway
+Amazon SES
+GitHub Pages
+</span>
+</p>
+<span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+<div class="tag">AWS</div><div class="tag">DevOps</div>
+</div>
+
+ 
+<div class="card blog-post" data-tags="aws devops">
 <h3>Deploying 3-Tier Architecture in AWS</h3>
 <p class="blog-text">
 Step-by-step guide for ALB, EC2, RDS and Auto Scaling setup...
@@ -257,3 +306,4 @@ tagFilter.addEventListener("change",filterBlogs);
 
 </body>
 </html>
+
