@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,17 +11,53 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;transition:0.3s;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+transition:0.3s;
+}
 
-body{background:#0f172a;color:#ffffff;}
-body.light-mode{background:#f8fafc;color:#0f172a;}
+body{
+background:#0f172a;
+color:#ffffff;
+}
 
-.container{width:90%;max-width:1200px;margin:auto;}
+body.light-mode{
+background:#f8fafc;
+color:#0f172a;
+}
 
-nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center;}
-nav h2{font-weight:800;font-size:22px;}
-nav a{text-decoration:none;color:inherit;margin-left:25px;opacity:.8;}
-nav a:hover{opacity:1;}
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* NAV */
+
+nav{
+padding:20px 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo img{
+height:50px;
+}
+
+nav a{
+text-decoration:none;
+color:inherit;
+margin-left:25px;
+opacity:.8;
+}
+
+nav a:hover{
+opacity:1;
+}
 
 .toggle-btn{
 cursor:pointer;
@@ -32,7 +69,17 @@ background:none;
 color:inherit;
 }
 
-.hero{padding:120px 0;text-align:center;}
+/* HERO */
+
+.hero{
+padding:120px 0;
+text-align:center;
+}
+
+.hero-logo{
+width:180px;
+margin-bottom:30px;
+}
 
 .hero h1{
 font-size:50px;
@@ -46,9 +93,15 @@ background:linear-gradient(90deg,#38bdf8,#818cf8);
 -webkit-text-fill-color:transparent;
 }
 
-.hero p{margin-top:20px;font-size:18px;opacity:.7;}
+.hero p{
+margin-top:20px;
+font-size:18px;
+opacity:.7;
+}
 
-.cta-buttons{margin-top:30px;}
+.cta-buttons{
+margin-top:30px;
+}
 
 .btn-primary{
 padding:12px 28px;
@@ -70,7 +123,11 @@ text-decoration:none;
 margin:10px;
 }
 
-section{padding:100px 0;}
+/* SECTIONS */
+
+section{
+padding:100px 0;
+}
 
 .section-title{
 text-align:center;
@@ -103,6 +160,8 @@ transform:translateY(-8px);
 border-color:#38bdf8;
 }
 
+/* METRICS */
+
 .metrics{
 display:flex;
 justify-content:space-around;
@@ -119,7 +178,12 @@ background:linear-gradient(90deg,#38bdf8,#818cf8);
 -webkit-text-fill-color:transparent;
 }
 
-.blog-controls{text-align:center;margin-bottom:40px;}
+/* BLOG */
+
+.blog-controls{
+text-align:center;
+margin-bottom:40px;
+}
 
 .blog-controls input,
 .blog-controls select{
@@ -151,6 +215,8 @@ font-weight:600;
 display:inline-block;
 }
 
+/* CTA */
+
 .cta-section{
 background:linear-gradient(90deg,#1e293b,#0f172a);
 padding:80px 20px;
@@ -161,6 +227,8 @@ border-top:1px solid #334155;
 body.light-mode .cta-section{
 background:#e2e8f0;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -177,7 +245,10 @@ opacity:.6;
 <div class="container">
 
 <nav>
-<h2>Nube Tech</h2>
+
+<div class="logo">
+<img src="logo.png" alt="Nube Tech Logo">
+</div>
 
 <div>
 <a href="#about">About</a>
@@ -187,10 +258,13 @@ opacity:.6;
 
 <button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
 </div>
+
 </nav>
 
 
 <div class="hero">
+
+<img src="logo.png" class="hero-logo" alt="Nube Tech">
 
 <h1>
 We Build <span>Scalable Cloud Infrastructure</span><br>
@@ -253,7 +327,7 @@ We focus on delivering reliable, scalable and cost-optimized cloud architectures
 
 <div class="card">
 <h3>Cloud Architecture</h3>
-<p>Secure and scalable AWS & Azure cloud architecture design.</p>
+<p>Secure and scalable AWS & Azure architecture design.</p>
 </div>
 
 <div class="card">
@@ -263,12 +337,12 @@ We focus on delivering reliable, scalable and cost-optimized cloud architectures
 
 <div class="card">
 <h3>Kubernetes Engineering</h3>
-<p>Production-grade container orchestration and platform engineering.</p>
+<p>Production-grade container orchestration.</p>
 </div>
 
 <div class="card">
 <h3>Cloud Migration</h3>
-<p>Seamless migration from on-premise or legacy cloud environments.</p>
+<p>Seamless migration from on-premise or legacy systems.</p>
 </div>
 
 </div>
@@ -314,7 +388,6 @@ We focus on delivering reliable, scalable and cost-optimized cloud architectures
 
 <h2 class="section-title">Cloud Engineering Blog</h2>
 
-
 <div class="blog-controls">
 
 <input type="text" id="searchInput" placeholder="Search blog...">
@@ -330,30 +403,18 @@ We focus on delivering reliable, scalable and cost-optimized cloud architectures
 </div>
 
 
-
 <div class="grid">
-
 
 <div class="card blog-post" data-tags="aws devops">
 
-<h3>Building a Serverless Contact Form using AWS</h3>
+<h3>Building Serverless Contact Forms using AWS</h3>
 
 <p class="blog-text">
 
-Learn how we built a serverless backend for static websites using Lambda, API Gateway and SES.
+Learn how we built a serverless backend using Lambda, API Gateway and SES.
 
 <span class="more-text" style="display:none;">
-
-Architecture includes:
-
-• GitHub Pages (Frontend)  
-• AWS Lambda  
-• API Gateway  
-• Amazon SES  
-• Terraform IaC  
-
-This architecture provides a scalable, secure and cost-efficient solution.
-
+Serverless architecture removes the need for managing servers while remaining scalable and secure.
 </span>
 
 </p>
@@ -364,7 +425,6 @@ This architecture provides a scalable, secure and cost-efficient solution.
 <div class="tag">DevOps</div>
 
 </div>
-
 
 
 <div class="card blog-post" data-tags="aws devops">
@@ -373,17 +433,10 @@ This architecture provides a scalable, secure and cost-efficient solution.
 
 <p class="blog-text">
 
-Step-by-step guide to deploying scalable infrastructure using ALB, EC2 and RDS.
+Step-by-step deployment of ALB, EC2 and RDS.
 
 <span class="more-text" style="display:none;">
-
-Includes:
-
-• Security group design  
-• Auto scaling configuration  
-• IAM role architecture  
-• Monitoring with CloudWatch  
-
+Includes security groups, autoscaling and monitoring best practices.
 </span>
 
 </p>
@@ -396,24 +449,16 @@ Includes:
 </div>
 
 
-
 <div class="card blog-post" data-tags="terraform aws">
 
 <h3>Terraform Remote Backend Setup</h3>
 
 <p class="blog-text">
 
-How to configure Terraform state management using S3 and DynamoDB.
+Configure Terraform remote state using S3 and DynamoDB.
 
 <span class="more-text" style="display:none;">
-
-Covers:
-
-• Remote state storage  
-• State locking  
-• Encryption  
-• CI/CD integration  
-
+Ensures safe collaboration and state locking.
 </span>
 
 </p>
@@ -457,18 +502,17 @@ Let’s build secure, scalable infrastructure for your business.
 <script>
 
 function toggleMode(){
-
 document.body.classList.toggle("light-mode");
 
-localStorage.setItem("theme",
-document.body.classList.contains("light-mode")?"light":"dark");
-
+localStorage.setItem(
+"theme",
+document.body.classList.contains("light-mode")?"light":"dark"
+);
 }
 
 if(localStorage.getItem("theme")==="light"){
 document.body.classList.add("light-mode");
 }
-
 
 
 function toggleReadMore(btn){
@@ -478,13 +522,11 @@ const moreText=btn.parentElement.querySelector(".more-text");
 if(moreText.style.display==="none"){
 
 moreText.style.display="inline";
-
 btn.innerText="Read Less";
 
 }else{
 
 moreText.style.display="none";
-
 btn.innerText="Read More";
 
 }
@@ -492,43 +534,30 @@ btn.innerText="Read More";
 }
 
 
-
 const searchInput=document.getElementById("searchInput");
-
 const tagFilter=document.getElementById("tagFilter");
-
 const posts=document.querySelectorAll(".blog-post");
-
-
 
 function filterBlogs(){
 
 const searchText=searchInput.value.toLowerCase();
-
 const selectedTag=tagFilter.value;
-
-
 
 posts.forEach(post=>{
 
 const text=post.innerText.toLowerCase();
-
 const tags=post.getAttribute("data-tags");
 
 const matchesSearch=text.includes(searchText);
+const matchesTag=selectedTag==="all" || tags.includes(selectedTag);
 
-const matchesTag=selectedTag==="all"||tags.includes(selectedTag);
-
-post.style.display=(matchesSearch&&matchesTag)?"block":"none";
+post.style.display=(matchesSearch && matchesTag)?"block":"none";
 
 });
 
 }
 
-
-
 searchInput.addEventListener("keyup",filterBlogs);
-
 tagFilter.addEventListener("change",filterBlogs);
 
 </script>
