@@ -36,6 +36,7 @@ margin:auto;
 }
 
 /* NAV */
+
 nav{
 padding:20px 0;
 display:flex;
@@ -44,8 +45,7 @@ align-items:center;
 }
 
 .logo img{
-height:60px;
-object-fit:contain;
+height:150px;
 }
 
 nav a{
@@ -70,29 +70,15 @@ color:inherit;
 }
 
 /* HERO */
+
 .hero{
-padding:160px 0;
-background:url('images/hero-new.png') center/cover no-repeat;
-border-radius:20px;
-position:relative;
-overflow:hidden;
+padding:120px 0;
+text-align:center;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(15,23,42,0.75);
-border-radius:20px;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:600px;
+.hero-logo{
+width:180px;
+margin-bottom:30px;
 }
 
 .hero h1{
@@ -110,7 +96,7 @@ background:linear-gradient(90deg,#38bdf8,#818cf8);
 .hero p{
 margin-top:20px;
 font-size:18px;
-opacity:.8;
+opacity:.7;
 }
 
 .cta-buttons{
@@ -124,7 +110,7 @@ background:linear-gradient(90deg,#38bdf8,#818cf8);
 color:white;
 text-decoration:none;
 font-weight:600;
-margin-right:10px;
+margin:10px;
 display:inline-block;
 }
 
@@ -132,11 +118,13 @@ display:inline-block;
 padding:12px 28px;
 border-radius:30px;
 border:1px solid #334155;
-color:white;
+color:inherit;
 text-decoration:none;
+margin:10px;
 }
 
 /* SECTIONS */
+
 section{
 padding:100px 0;
 }
@@ -159,11 +147,7 @@ background:#1e293b;
 padding:30px;
 border-radius:16px;
 border:1px solid #334155;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#38bdf8;
+transition:.3s ease;
 }
 
 body.light-mode .card{
@@ -171,7 +155,13 @@ background:white;
 border:1px solid #ddd;
 }
 
+.card:hover{
+transform:translateY(-8px);
+border-color:#38bdf8;
+}
+
 /* METRICS */
+
 .metrics{
 display:flex;
 justify-content:space-around;
@@ -189,6 +179,7 @@ background:linear-gradient(90deg,#38bdf8,#818cf8);
 }
 
 /* BLOG */
+
 .blog-controls{
 text-align:center;
 margin-bottom:40px;
@@ -208,7 +199,12 @@ background:#334155;
 padding:5px 10px;
 border-radius:20px;
 font-size:12px;
+margin-right:5px;
 margin-top:10px;
+}
+
+body.light-mode .tag{
+background:#e2e8f0;
 }
 
 .read-more{
@@ -220,6 +216,7 @@ display:inline-block;
 }
 
 /* CTA */
+
 .cta-section{
 background:linear-gradient(90deg,#1e293b,#0f172a);
 padding:80px 20px;
@@ -227,7 +224,12 @@ text-align:center;
 border-top:1px solid #334155;
 }
 
+body.light-mode .cta-section{
+background:#e2e8f0;
+}
+
 /* FOOTER */
+
 footer{
 text-align:center;
 padding:30px 0;
@@ -243,8 +245,9 @@ opacity:.6;
 <div class="container">
 
 <nav>
+
 <div class="logo">
-<img src="images/logo.png" alt="Nube Tech Logo">
+<img src="logo.png" alt="Nube Tech Logo">
 </div>
 
 <div>
@@ -252,12 +255,16 @@ opacity:.6;
 <a href="#services">Services</a>
 <a href="#impact">Impact</a>
 <a href="#blog">Blog</a>
-<button class="toggle-btn" onclick="toggleMode()">🌙</button>
+
+<button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
 </div>
+
 </nav>
 
+
 <div class="hero">
-<div class="hero-content">
+
+<img src="logo.png" class="hero-logo" alt="Nube Tech">
 
 <h1>
 We Build <span>Scalable Cloud Infrastructure</span><br>
@@ -267,78 +274,321 @@ For Modern Businesses
 <p>AWS | Azure | Kubernetes | Terraform | DevOps Automation</p>
 
 <div class="cta-buttons">
+
 <a href="#" class="btn-primary">Schedule Consultation</a>
+
 <a href="#" class="btn-secondary">Download Company Profile</a>
+
 </div>
 
 </div>
-</div>
 
 </div>
+
 
 <section id="about">
+
 <div class="container">
 
 <h2 class="section-title">About Nube Tech</h2>
 
 <div class="card">
-<p>Nube Tech is a cloud engineering and DevOps consulting company helping startups and enterprises design, build and scale secure cloud infrastructure.</p>
+
+<p>
+Nube Tech is a cloud engineering and DevOps consulting company helping startups and enterprises design, build and scale secure cloud infrastructure.
+</p>
+
+<br>
+
+<p>
+Our team has extensive experience across AWS, Microsoft Azure and modern DevOps ecosystems including Kubernetes, Terraform, Docker, CI/CD pipelines and infrastructure automation. We work closely with startups, fintech companies and growing enterprises to design cloud architectures that support high performance, reliability and security.
+</p>
+<br>
+
+  
+<p>
+At Nube Tech, we believe that cloud infrastructure should not only be powerful but also efficient and manageable. Our approach focuses on Infrastructure as Code, automation and observability to ensure that systems remain stable, scalable and easy to operate as businesses grow.
+</p>
+
+<br>
+
+<p>
+We support organizations across the entire cloud journey — from cloud strategy and architecture design to migration, DevOps implementation, monitoring and long-term optimization.
+</p>
+
+<br>
+
+<h3>Our Mission</h3>
+
+<p>
+Our mission is to help organizations leverage the power of cloud technologies to build scalable, resilient and secure digital platforms that drive innovation and business growth.
+</p>
+
 </div>
 
 </div>
+
 </section>
 
+
+
+
+  
 <section>
+
 <div class="container">
 
 <h2 class="section-title">Why Choose Nube Tech</h2>
 
 <div class="grid">
 
-<div class="card"><h3>AWS & Azure Expertise</h3></div>
-<div class="card"><h3>DevOps Automation</h3></div>
-<div class="card"><h3>Kubernetes Engineering</h3></div>
-<div class="card"><h3>Secure Cloud Design</h3></div>
-<div class="card"><h3>Cost Optimization</h3></div>
-<div class="card"><h3>Cloud Migration</h3></div>
+<div class="card">
+<h3>AWS & Azure Expertise</h3>
+<p>Deep experience designing enterprise-grade cloud architecture across AWS and Azure.</p>
+</div>
 
+<div class="card">
+<h3>DevOps Automation</h3>
+<p>CI/CD pipelines, Infrastructure as Code and automated deployment pipelines.</p>
+</div>
+
+<div class="card">
+<h3>Kubernetes Engineering</h3>
+<p>Production-ready container platforms and Kubernetes infrastructure.</p>
+</div>
+
+<div class="card">
+<h3>Secure Cloud Design</h3>
+<p>Security-first infrastructure with best practices and compliance-ready architecture.</p>
+</div>
+
+<div class="card">
+<h3>Cost Optimization</h3>
+<p>Cloud cost analysis and optimization strategies for efficient infrastructure.</p>
+</div>
+
+<div class="card">
+<h3>Cloud Migration</h3>
+<p>Seamless migration from on-premise systems to scalable cloud platforms.</p>
 </div>
 
 </div>
+
+</div>
+
 </section>
 
+
+
+
 <section id="impact">
+
 <div class="container">
 
 <h2 class="section-title">Impact</h2>
 
 <div class="metrics">
-<div class="metric"><h2>100+</h2><p>Deployments</p></div>
-<div class="metric"><h2>50+</h2><p>Clients</p></div>
-<div class="metric"><h2>99.99%</h2><p>Uptime</p></div>
+
+<div class="metric">
+<h2>100+</h2>
+<p>Cloud Deployments</p>
+</div>
+
+<div class="metric">
+<h2>50+</h2>
+<p>Clients Supported</p>
+</div>
+
+<div class="metric">
+<h2>99.99%</h2>
+<p>Infrastructure Uptime</p>
 </div>
 
 </div>
+
+</div>
+
 </section>
+
+
+<section id="blog">
+
+<div class="container">
+
+<h2 class="section-title">Cloud Engineering Blog</h2>
+
+<div class="blog-controls">
+
+<input type="text" id="searchInput" placeholder="Search blog...">
+
+<select id="tagFilter">
+<option value="all">All Tags</option>
+<option value="aws">AWS</option>
+<option value="terraform">Terraform</option>
+<option value="kubernetes">Kubernetes</option>
+<option value="devops">DevOps</option>
+</select>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card blog-post" data-tags="aws devops">
+
+<h3>Building Serverless Contact Forms using AWS</h3>
+
+<p class="blog-text">
+
+Learn how we built a serverless backend using Lambda, API Gateway and SES.
+
+<span class="more-text" style="display:none;">
+Serverless architecture removes the need for managing servers while remaining scalable and secure.
+</span>
+
+</p>
+
+<span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+
+<div class="tag">AWS</div>
+<div class="tag">DevOps</div>
+
+</div>
+
+
+<div class="card blog-post" data-tags="aws devops">
+
+<h3>Deploying 3-Tier Architecture in AWS</h3>
+
+<p class="blog-text">
+
+Step-by-step deployment of ALB, EC2 and RDS.
+
+<span class="more-text" style="display:none;">
+Includes security groups, autoscaling and monitoring best practices.
+</span>
+
+</p>
+
+<span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+
+<div class="tag">AWS</div>
+<div class="tag">DevOps</div>
+
+</div>
+
+
+<div class="card blog-post" data-tags="terraform aws">
+
+<h3>Terraform Remote Backend Setup</h3>
+
+<p class="blog-text">
+
+Configure Terraform remote state using S3 and DynamoDB.
+
+<span class="more-text" style="display:none;">
+Ensures safe collaboration and state locking.
+</span>
+
+</p>
+
+<span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+
+<div class="tag">Terraform</div>
+<div class="tag">AWS</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 
 <section class="cta-section">
+
 <h2>Ready to Modernize Your Cloud?</h2>
+
+<p style="margin-top:15px;opacity:.7;">
+Let’s build secure, scalable infrastructure for your business.
+</p>
+
+<div class="cta-buttons">
+
 <a href="#" class="btn-primary">Contact Nube Tech</a>
+
+</div>
+
 </section>
 
+
 <footer>
-© 2026 Nube Tech
+© 2026 NubeTech Global Solutions | Cloud & DevOps Engineering
 </footer>
 
+
 <script>
+
 function toggleMode(){
 document.body.classList.toggle("light-mode");
-localStorage.setItem("theme",
-document.body.classList.contains("light-mode")?"light":"dark");
+
+localStorage.setItem(
+"theme",
+document.body.classList.contains("light-mode")?"light":"dark"
+);
 }
+
 if(localStorage.getItem("theme")==="light"){
 document.body.classList.add("light-mode");
 }
+
+
+function toggleReadMore(btn){
+
+const moreText=btn.parentElement.querySelector(".more-text");
+
+if(moreText.style.display==="none"){
+
+moreText.style.display="inline";
+btn.innerText="Read Less";
+
+}else{
+
+moreText.style.display="none";
+btn.innerText="Read More";
+
+}
+
+}
+
+
+const searchInput=document.getElementById("searchInput");
+const tagFilter=document.getElementById("tagFilter");
+const posts=document.querySelectorAll(".blog-post");
+
+function filterBlogs(){
+
+const searchText=searchInput.value.toLowerCase();
+const selectedTag=tagFilter.value;
+
+posts.forEach(post=>{
+
+const text=post.innerText.toLowerCase();
+const tags=post.getAttribute("data-tags");
+
+const matchesSearch=text.includes(searchText);
+const matchesTag=selectedTag==="all" || tags.includes(selectedTag);
+
+post.style.display=(matchesSearch && matchesTag)?"block":"none";
+
+});
+
+}
+
+searchInput.addEventListener("keyup",filterBlogs);
+tagFilter.addEventListener("change",filterBlogs);
+
 </script>
 
 </body>
